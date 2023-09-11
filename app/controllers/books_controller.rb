@@ -16,9 +16,10 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to @book
+      redirect_to @book, notice: "Joda firme!"
     else
-      render :new
+      flash.alert = "Hey mi vale y entonces"
+      redirect_to books_path, alert: @book.errors
     end
   end
 

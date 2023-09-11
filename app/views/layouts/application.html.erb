@@ -13,6 +13,11 @@
   </head>
 
   <body class="mx-auto" style="width: 700px;">
+    <% flash.each do |type, msg| %>
+      <div class="p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
